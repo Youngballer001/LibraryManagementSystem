@@ -1,354 +1,163 @@
-\# 📚 School Library Management System
+# School Library Management System
 
+A digital School Library Management System designed to help manage books, students, borrowing records, and library fines.
 
+## Project Overview
 
-A software application designed to simplify and improve library operations through digital management of books, students, borrowings, and fines.
+The system is developed using multiple technologies:
 
+* **Frontend:** HTML, CSS, and JavaScript
+* **Main Backend:** Java and Spring Boot
+* **Database:** MySQL
+* **Fines API:** Python and Flask
 
-
-\## 🚀 Project Overview
-
-
-
-The School Library Management System aims to provide an organized way of managing library activities. It brings together a user-friendly frontend, a Java Spring Boot backend, a MySQL database, and a Python-based fines API.
-
-
-
-The system is intended to reduce manual record-keeping, improve accessibility of library information, and make everyday library operations more efficient.
-
-
-
-\## ✨ Main Components
-
-
-
-\* \*\*Frontend:\*\* User interface built with HTML, CSS, and JavaScript.
-
-\* \*\*Backend:\*\* Java application built using Spring Boot.
-
-\* \*\*Database:\*\* MySQL for storing application data.
-
-\* \*\*Fines API:\*\* Python application for fines-related functionality.
-
-
-
-\## 🛠️ Technologies Used
-
-
-
-| Technology  | Purpose                |
-
-| ----------- | ---------------------- |
-
-| HTML5       | Web page structure     |
-
-| CSS3        | Styling and layout     |
-
-| JavaScript  | Frontend functionality |
-
-| Java        | Backend development    |
-
-| Spring Boot | Backend framework      |
-
-| MySQL       | Database management    |
-
-| Python      | Fines API              |
-
-| Git         | Version control        |
-
-| GitHub      | Source code hosting    |
-
-
-
-\## 📁 Project Structure
-
-
+## Project Structure
 
 ```text
-
 LibraryManagementSystem/
-
 │
-
 ├── Backend/
-
-│   └── src/
-
-│       └── main/
-
-│           └── java/
-
-│               └── com/
-
-│                   └── schoollibrary/
-
-│                       └── Main.java
-
+│   └── src/main/java/com/schoollibrary/
+│       └── Main.java
 │
-
-├── Frontend/
-
-│   ├── index.html
-
-│   ├── style.css
-
-│   └── style.js
-
-│
-
-├── Fines\_api/
-
+├── Fines_api/
 │   ├── app.py
-
 │   └── requirements.txt
-
 │
-
+├── Frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── style.js
+│
 ├── images/
-
-│   └── Project image assets
-
 │
-
 ├── library-backend/
-
 │   └── library-backend/
-
-│       ├── mvnw
-
-│       ├── mvnw.cmd
-
+│       ├── src/
 │       ├── pom.xml
-
-│       └── src/
-
-│           ├── main/
-
-│           │   ├── java/
-
-│           │   │   └── com/schoollibrary/
-
-│           │   └── resources/
-
-│           │       └── application.properties
-
-│           └── test/
-
+│       └── mvnw.cmd
 │
-
 ├── .gitignore
-
 └── README.md
-
 ```
 
+## Technologies Used
 
+* HTML5
+* CSS3
+* JavaScript
+* Java
+* Spring Boot
+* Python
+* Flask
+* MySQL
+* Maven
+* Git and GitHub
 
-\## ⚙️ Requirements
+## Running the Project
 
+### 1. Main Java Spring Boot Backend
 
+Make sure MySQL is running and the `school_library` database exists.
 
-Before running the application, ensure you have the following installed:
-
-
-
-\* Java Development Kit (JDK)
-
-\* MySQL Server
-
-\* Python
-
-\* A modern web browser
-
-\* Git
-
-
-
-You will also need the database configured for the backend.
-
-
-
-\## 🗄️ Database Configuration
-
-
-
-The Spring Boot backend uses the following database configuration:
-
-
-
-```properties
-
-spring.datasource.url=${DB\_URL:jdbc:mysql://localhost:3307/school\_library}
-
-spring.datasource.username=${DB\_USERNAME:root}
-
-spring.datasource.password=${DB\_PASSWORD}
-
-```
-
-
-
-Configure the appropriate environment variables on your computer:
-
-
-
-\* `DB\_URL`
-
-\* `DB\_USERNAME`
-
-\* `DB\_PASSWORD`
-
-
-
-\*\*Important:\*\* Never commit actual database passwords, API keys, or other private credentials to GitHub.
-
-
-
-\## ▶️ Running the Application
-
-
-
-\### 1. Clone the repository
-
-
+Open a terminal and navigate to the Spring Boot project:
 
 ```bash
-
-git clone https://github.com/Youngballer001/LibraryManagementSystem.git
-
-```
-
-
-
-\### 2. Open the project
-
-
-
-```bash
-
-cd LibraryManagementSystem
-
-```
-
-
-
-\### 3. Start the MySQL database
-
-
-
-Ensure your MySQL server is running and that the `school\_library` database is configured.
-
-
-
-\### 4. Start the Spring Boot backend
-
-
-
-Navigate to the backend application:
-
-
-
-```bash
-
 cd library-backend/library-backend
-
 ```
 
+Configure the database environment variables in your terminal.
 
-
-Run:
-
-
-
-\*\*Windows:\*\*
-
-
+For Windows Command Prompt:
 
 ```cmd
+set DB_URL=jdbc:mysql://localhost:3307/school_library
+set DB_USERNAME=root
+set DB_PASSWORD=your_database_password
+```
 
+Start the backend:
+
+```cmd
 mvnw.cmd spring-boot:run
-
 ```
 
+The Spring Boot backend runs on:
 
+```text
+http://localhost:8080
+```
 
-\*\*Linux/macOS:\*\*
+### 2. Python Fines API
 
-
+Navigate to the project root and create a virtual environment:
 
 ```bash
-
-./mvnw spring-boot:run
-
+python -m venv venv
 ```
 
-
-
-The backend is configured to use port `8080`.
-
-
-
-\### 5. Open the frontend
-
-
-
-Navigate to the `Frontend` directory and open `index.html` using a local development server.
-
-
-
-\### 6. Run the Fines API
-
-
-
-The Python application is located in `Fines\_api/`. Install its dependencies using:
-
-
+Activate it in Git Bash:
 
 ```bash
-
-pip install -r requirements.txt
-
+source venv/Scripts/activate
 ```
 
+Install the dependencies:
 
+```bash
+pip install -r Fines_api/requirements.txt
+```
 
-Run the application using the appropriate command for its framework.
+Start the API:
 
+```bash
+python Fines_api/app.py
+```
 
+The fines API runs on:
 
-\## 🔐 Security
+```text
+http://127.0.0.1:5000
+```
 
+Available endpoints:
 
+| Method | Endpoint          | Purpose                           |
+| ------ | ----------------- | --------------------------------- |
+| GET    | `/health`         | Checks whether the API is running |
+| POST   | `/calculate-fine` | Calculates overdue book fines     |
 
-The backend includes authentication functionality and password encryption using BCrypt.
+The fine rate is KES 10 per overdue day.
 
+### 3. Frontend
 
+Open `Frontend/index.html` using a local development server.
 
-Database credentials should be supplied through environment variables rather than hardcoded into application files.
+The frontend communicates with the Spring Boot backend.
 
+### 4. Separate Java Console Program
 
+The `Backend` directory also contains a simple Java console program.
 
-\## 👨‍💻 Development
+From the project root, compile it:
 
+```bash
+javac -d out Backend/src/main/java/com/schoollibrary/Main.java
+```
 
+Run it:
 
-This project is developed using a modular structure, separating frontend functionality, backend operations, database configuration, and fines-related services.
+```bash
+java -cp out com.schoollibrary.Main
+```
 
+## Configuration and Security
 
+* Database credentials should be supplied through environment variables.
+* Do not commit passwords, API keys, or other sensitive credentials.
+* Environment files such as `.env` should remain excluded from Git.
+* Use secure authentication and authorization when deploying the application.
 
-\## 📌 Project Status
+## Project Status
 
-
-
-Under development. Features and functionality may change as development continues.
-
-
-
-\## 📄 License
-
-
-
-No license has currently been specified for this project.
-
-
-
+The School Library Management System is under development. Features and components may change as development continues.
